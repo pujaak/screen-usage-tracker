@@ -13,6 +13,10 @@ Tracks your active screen time, desktop apps, and websites (via browser tab titl
 
 ## Getting Started
 ### 1. Clone the Repository
+=======
+## Quick Start
+### Step 1. Clone the Repository
+>>>>>>> eb40c2c6ee3f967aec67e78acfe18a5c04bdf81e
 
 ```bash
 git clone https://github.com/pujaak/screen-usage-tracker.git
