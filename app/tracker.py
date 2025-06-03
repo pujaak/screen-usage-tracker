@@ -47,8 +47,8 @@ def start_tracking():
                     activity_duration += TRACK_INTERVAL
                 else: 
                     if activity_duration >= LOG_INTERVAL:
-                        log_usage(last_app, last_window, activity_duration)
-                        print(f"📥 Logged: {last_app}, {last_window}, {activity_duration}s")
+                        log_usage(last_app, last_window, round(activity_duration / 60, 2)) #convert activity_duration from seconds to minute
+                        print(f"📥 Logged: {last_app}, {last_window}, {round(activity_duration / 60, 2)} min")
 
                     last_app = app
                     last_window = window
@@ -56,8 +56,8 @@ def start_tracking():
             
             else:
                 if activity_duration >= LOG_INTERVAL:
-                    log_usage(last_app, last_window, activity_duration)
-                    print(f"⏸️ Idle detected. Logged: {last_app}, {last_window}, {activity_duration}s")
+                    log_usage(last_app, last_window, round(activity_duration / 60, 2)) #convert activity_duration from seconds to minute
+                    print(f"⏸️ Idle detected. Logged: {last_app}, {last_window}, {round(activity_duration / 60, 2)} min")
                 
                 last_app = None
                 last_window = None
@@ -69,8 +69,8 @@ def start_tracking():
     except KeyboardInterrupt:
         print("\n🛑 Tracking stopped. ")
         if activity_duration >= LOG_INTERVAL:
-            log_usage(last_app, last_window, activity_duration)
-            print(f"✅ Final log saved: {last_app}, {last_window}, {activity_duration}s")
+            log_usage(last_app, last_window, round(activity_duration / 60, 2)) #convert activity_duration from seconds to minute
+            print(f"✅ Final log saved: {last_app}, {last_window}, {round(activity_duration / 60, 2)} min")
 
 
 # # to test tracker.py code: 
