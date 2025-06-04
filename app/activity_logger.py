@@ -15,7 +15,6 @@ def log_usage(app_name, window_title, active_time):
        
 
 
-
 # testing
 # log_usage("chrome", "youtube", 60)
 # # Print the contents of the CSV file

@@ -25,6 +25,7 @@ def start_tracking():
     last_app = None
     last_window = None
     activity_duration = 0
+    total_active_time = 0  # in seconds
 
     try:
         while True:
@@ -48,6 +49,7 @@ def start_tracking():
                 else: 
                     if activity_duration >= LOG_INTERVAL:
                         log_usage(last_app, last_window, round(activity_duration / 60, 2)) #convert activity_duration from seconds to minute
+                        total_active_time += activity_duration  # accumulate
                         print(f"📥 Logged: {last_app}, {last_window}, {round(activity_duration / 60, 2)} min")
 
                     last_app = app
@@ -57,8 +59,9 @@ def start_tracking():
             else:
                 if activity_duration >= LOG_INTERVAL:
                     log_usage(last_app, last_window, round(activity_duration / 60, 2)) #convert activity_duration from seconds to minute
+                    total_active_time += activity_duration  # accumulate
                     print(f"⏸️ Idle detected. Logged: {last_app}, {last_window}, {round(activity_duration / 60, 2)} min")
-                
+
                 last_app = None
                 last_window = None
                 activity_duration = 0
@@ -70,8 +73,12 @@ def start_tracking():
         print("\n🛑 Tracking stopped. ")
         if activity_duration >= LOG_INTERVAL:
             log_usage(last_app, last_window, round(activity_duration / 60, 2)) #convert activity_duration from seconds to minute
+            # total activity duration
+            total_active_time += activity_duration  # accumulate
             print(f"✅ Final log saved: {last_app}, {last_window}, {round(activity_duration / 60, 2)} min")
-
+        print(f"🟡 TOTAL ACTIVE SCREEN TIME: {round(total_active_time / 60, 2)} min")
+        # to log total active screen time in usage_log.csv in minutes
+        log_usage("TOTAL ACTIVE SCREEN TIME: ", "", round(total_active_time / 60, 2))
 
 # # to test tracker.py code: 
 # start_tracking()
