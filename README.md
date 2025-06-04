@@ -2,6 +2,9 @@
 # 🖥️ Screen Usage Tracker
 A CLI application that tracks your active screen time, desktop apps, and websites (via browser tab titles). Useful for productivity tracking, or building time-management habits.
 
+<img width="661" alt="1screen usage total active time in minutes" src="https://github.com/user-attachments/assets/08663c97-7f3f-4be8-aa00-e92b30fb8b40" />
+
+
 ## Features
 - Tracks active desktop applications
 - Infers website usage via browser window titles
@@ -75,13 +78,9 @@ source env/bin/activate
 python main.py
 ```
 ---
-### Expected Outputs:
-<img width="715" alt="1screen usage log" src="https://github.com/user-attachments/assets/e0b96e36-14bb-4346-a505-cbc3faeb723e" />
 
-<img width="564" alt="3screen usage log - the except block code" src="https://github.com/user-attachments/assets/334a254a-92d9-482b-9997-453969f09fd2" />
-
-<img width="555" alt="2screen usage log" src="https://github.com/user-attachments/assets/d19204df-316d-4308-8964-7c0a6a7cfd9f" />
 
 #### usage_log.csv Output:
-<img width="836" alt="usage_log-csv" src="https://github.com/user-attachments/assets/60e2a036-a7f0-475d-87b2-8c4e1e664c4c" />
+![image](https://github.com/user-attachments/assets/4b42ba1d-9bba-475a-a544-5bbd6a326f64)
+
 
