@@ -9,7 +9,7 @@ def log_usage(app_name, window_title, active_time):
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             app_name,
             window_title,
-            f"{active_time} min"
+            active_time
         ])
         
        
